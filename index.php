@@ -1,21 +1,29 @@
-<?php include 'template/top.php' ?>
-
+<?php 
+    require_once 'controller/indexProcess.php';
+    if($path['call_parts'][0]==''){
+        include 'template/top.php';
+    }else if($path['call_parts'][0]=='registration'){
+        include 'template/registerTop.php';
+    }
+?>
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-    <!-- Preloader -->
-    <div id="preloader">
-        <div id="load"></div>
-    </div>
     
-    <?php include 'template/header.php' ?>
+    <!-- preloader -->
+    <div id="preloader">
+        <div id="cssload-clock"></div>
+    </div>
+    <!-- end preloader -->
+    <?php if($path['call_parts'][0]==''){
+        include 'template/header.php' ?>
 
     <!-- Section: intro -->
     <section id="intro" class="intro">
         <div class="slogan">
-            <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">welcome to educationbd</h2>
-            <h3 data-wow-duration="1000ms" class="wow slideInLeft animated">We serve<span class="color">  Education  </span>to all!!</h3>
+            <h2 data-wow-delay="1.5s" class="wow bounceInDown animated">welcome to educationbd</h2>
+            <h3 data-wow-delay="1.5s" class="wow slideInLeft animated">We serve<span class="color">  Education  </span>to all</h3>
         </div>
-        <div data-wow-duration="1000ms" class="wow bounceInUp animated page-scroll">
-            <div class="wow shake" data-wow-delay="1500ms">
+        <div data-wow-delay="1.5s" class="wow bounceInUp animated page-scroll">
+            <div class="wow shake" data-wow-delay="2.5s">
                 <a href="#service" class="btn btn-circle">
                     <i class="fa fa-angle-double-down animated"></i>
                 </a>
@@ -23,77 +31,20 @@
         </div>
     </section>
     <!-- /Section: intro -->
-    <!-- Section: about -->
-    <section id="about" class="home-section text-center">
-        <div class="heading-about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="wow bounceInDown" data-wow-delay="0.4s">
-                            <div class="section-heading">
-                                <h2>About us</h2>
-                                <i class="fa fa-2x fa-angle-down"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Section: registration -->
+    <section id="registration" class="home-section text-center registration">
+        <div class="slogan">
+            <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">It would be fun to do a reunion show. I hope it's high time to get together like old days.</h2>
+            <h3 data-wow-duration="1000ms" class="wow slideInRight animated">Registration for reunion</h3>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-lg-offset-5">
-                    <hr class="marginbot-50">
-                </div>
+        <div data-wow-duration="1000ms" class="wow bounceInUp animated page-scroll">
+            <div class="wow bounceInUp animated" data-wow-delay="1000ms">
+                <a id="registration" href="registration" class="btn btn-info btn-lg">
+                    <i class="fa fa-angle-double-right"></i> <span>Registration</span>
+                </a>
             </div>
-            <div class="row">
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <div class="wow bounceInUp" data-wow-delay="0.2s">
-                        <div class="team boxed-grey">
-                            <div class="inner">
-                                <h5>Anna Hanaceck</h5>
-                                <p class="subtitle">Pixel Crafter</p>
-                                <div class="avatar"><img src="assets/img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <div class="wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="team boxed-grey">
-                            <div class="inner">
-                                <h5>Maura Daniels</h5>
-                                <p class="subtitle">Ruby on Rails</p>
-                                <div class="avatar"><img src="assets/img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <div class="wow bounceInUp" data-wow-delay="0.8s">
-                        <div class="team boxed-grey">
-                            <div class="inner">
-                                <h5>Jack Briane</h5>
-                                <p class="subtitle">jQuery Ninja</p>
-                                <div class="avatar"><img src="assets/img/team/3.jpg" alt="" class="img-responsive img-circle" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <div class="wow bounceInUp" data-wow-delay="1s">
-                        <div class="team boxed-grey">
-                            <div class="inner">
-                                <h5>Shariful Islam</h5>
-                                <p class="subtitle">PHP Chief</p>
-                                <div class="avatar"><img src="assets/img/team/troublesome.jpg" alt="" class="img-responsive img-circle" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-    <!-- /Section: about -->
+    <!-- /Section: registration -->
     <!-- Section: services -->
     <section id="service" class="home-section text-center bg-gray">
         <div class="heading-about">
@@ -173,6 +124,77 @@
         </div>
     </section>
     <!-- /Section: services -->
+    <!-- Section: about -->
+    <section id="about" class="home-section text-center">
+        <div class="heading-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.4s">
+                            <div class="section-heading">
+                                <h2>About us</h2>
+                                <i class="fa fa-2x fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5">
+                    <hr class="marginbot-50">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="wow bounceInUp" data-wow-delay="0.2s">
+                        <div class="team boxed-grey">
+                            <div class="inner">
+                                <h5>Anna Hanaceck</h5>
+                                <p class="subtitle">Pixel Crafter</p>
+                                <div class="avatar"><img src="assets/img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="wow bounceInUp" data-wow-delay="0.5s">
+                        <div class="team boxed-grey">
+                            <div class="inner">
+                                <h5>Maura Daniels</h5>
+                                <p class="subtitle">Ruby on Rails</p>
+                                <div class="avatar"><img src="assets/img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="wow bounceInUp" data-wow-delay="0.8s">
+                        <div class="team boxed-grey">
+                            <div class="inner">
+                                <h5>Shaion Ahamed</h5>
+                                <p class="subtitle">jQuery Ninja</p>
+                                <div class="avatar"><img src="assets/img/team/shaion.jpg" alt="" class="img-responsive img-circle" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="wow bounceInUp" data-wow-delay="1s">
+                        <div class="team boxed-grey">
+                            <div class="inner">
+                                <h5>Shariful Islam</h5>
+                                <p class="subtitle">PHP Chief</p>
+                                <div class="avatar"><img src="assets/img/team/troublesome.jpg" alt="" class="img-responsive img-circle" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Section: about -->
     <!-- Section: contact -->
     <section id="contact" class="home-section text-center">
         <div class="heading-contact">
@@ -260,10 +282,10 @@
                             <strong>We're on social networks</strong>
                             <br>
                             <div class="company-social">
-                                <a href="#" target="_blank" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="#" target="_blank" class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
-                                <a href="#" target="_blank" class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook fa-lg"></i></a>
+                                <a href="#" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                                <a href="#" target="_blank" class="btn btn-instagram"><i class="fa fa-instagram fa-lg"></i></a>
+                                <a href="#" target="_blank" class="btn btn-google-plus"><i class="fa fa-google-plus fa-lg"></i></a>
                             </div>
                         </address>
                     </div>
@@ -271,6 +293,16 @@
             </div>
         </div>
     </section>
-    
+    <?php
+        }else if($path['call_parts'][0]=='registration'){
+            include 'template/registration/body.php';
+        }
+    ?>
 
-<?php include 'template/bottom.php' ?>    
+<?php
+    if($path['call_parts'][0]==''){
+        include 'template/bottom.php';
+    }else if($path['call_parts'][0]=='registration'){
+        include 'template/registerBottom.php';
+    }
+?>    

@@ -11,7 +11,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">About us</a></li>
@@ -21,9 +21,9 @@
                         <li><a href="#contact">Contact us</a></li>
                     </ul>
                 </li>
-                <li><a href="#intro">Registration</a></li>
-                <li><a href="#about">Photo galary</a></li>
-                <li><a href="#service">Members</a></li>
+                <li><a href="#registration">Registration</a></li>
+                <li><a href="#service">Photo galary</a></li>
+                <li><a href="#about">Members</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
