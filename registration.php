@@ -1,3 +1,5 @@
+<?php  include 'template/registration/registerTop.php'; ?>
+
 <div class="container">
     <div class="fs-form-wrap" id="fs-form-wrap">
         <div class="fs-title">
@@ -65,3 +67,5 @@
     </div><!-- /fs-form-wrap -->
 
 </div><!-- /container -->
+
+ <?php include 'template/registration/registerBottom.php';?>

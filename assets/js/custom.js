@@ -40,10 +40,10 @@ $(document).ready(function() {
     });
 
     //when on top nothing will be active
-    // $(window).scroll(function() {
-    //     if ($(window).scrollTop() < 20)
-    //         $('.active').removeClass('active');
-    // });
+//     $(window).scroll(function() {
+//         if ($(window).scrollTop() < 20)
+//             $('.active').removeClass('active');
+//     });
 
     $('.navbar-nav li a').click(function() {        
         $(this).addClass('active').siblings().removeClass('active');

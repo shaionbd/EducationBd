@@ -1,17 +1,8 @@
-<?php //include 'template/footer.php' ?>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/registration/classie.js"></script>
 <script src="assets/js/registration/selectFx.js"></script>
 <script src="assets/js/registration/fullscreenForm.js"></script>
 <script>
-    /* ========================================================================= */
-    /*    Preloader
-     /* ========================================================================= */
-
-    jQuery(window).load(function () {
-        
-        jQuery("#preloader").delay(1000).fadeOut("slow");
-    });
     (function () {
         var formWrap = document.getElementById('fs-form-wrap');
 

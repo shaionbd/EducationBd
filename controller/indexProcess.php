@@ -16,5 +16,3 @@ $cleanURL = new cleanURL();
 #call necessary function
 $path = $cleanURL->get_path();
 
-?>
-
